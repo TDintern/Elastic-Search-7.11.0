@@ -1,13 +1,4 @@
 # Starter pipeline
-- task: SnykSecurityScan@1
-  inputs:
-    serviceConnectionEndpoint: 'Snyk connection'
-    testType: 'app'
-    monitorWhen: 'always'
-    failOnIssues: true
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
 
 trigger:
 - main
@@ -18,10 +9,9 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
 - task: SnykSecurityScan@1
   inputs:
-    serviceConnectionEndpoint: 'Snyk connection'
+    serviceConnectionEndpoint: 'SNYK'
     testType: 'app'
     monitorWhen: 'always'
     failOnIssues: true
