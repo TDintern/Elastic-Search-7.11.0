@@ -15,9 +15,10 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
 - task: SnykSecurityScan@1
   inputs:
     serviceConnectionEndpoint: 'SNYK'
     testType: 'app'
-    monitorWhen: 'always'
+    monitorWhen: 'never'
     failOnIssues: true
